@@ -10,27 +10,26 @@
         <div class="font text-light col-md-12 d-flex justify-content-center">
             <div class="form-group">
                 <label for="nome" class="mb-0">NOME</label>
-                <input type="text" name="nome" id="nome" class="form-control" placeholder="Entre com seu nome">
+                <input [(ngModel)]='user.nome' class="form-control" type="text" name="nome" id="nome"  placeholder="Entre com seu nome">
                 <label for="usuario" class="mb-0">USUÁRIO</label>
-                <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Seu nome de usuário">
+                <input [(ngModel)]='user.usuario' class="form-control" type="text" name="usuario" id="usuario"  placeholder="Seu nome de usuário">
                 <label for="linkfoto" class="mb-0">LINK DA FOTO</label>
-                <input type="text" name="linkfoto" id="linkfoto" class="form-control" placeholder="Isnsira o link">
+                <input [(ngModel)]='user.foto' class="form-control" type="text" name="linkfoto" id="linkfoto"  placeholder="Insira o link">
                 <label for="senha" class="mb-0">SENHA</label>
-                <input type="password" name="senha" id="senha" class="form-control" placeholder="Crie sua senha">
+                <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha"  placeholder="Crie sua senha">
                 <label for="confirmSenha" class="mb-0">CONFIRME A SENHA</label>
-                <input type="password" name="confirmSenha" id="confirmSenha" class="form-control"
-                    placeholder="Confirme sua senha">
+                <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmSenha" id="confirmSenha"  placeholder="Confirme sua senha">
                 <label for="tipo" class="mb-0">TIPO DE USUARIO</label>
-                <select class="form-control" name="tipo" id="tipo">
+                <select class="form-control" name="tipo" id="tipo" (change)='tipoUsuario($event)'>
                     <option value="">Escolha...</option>
-                    <option value="">Normal</option>
-                    <option value="">Administrador</option>
+                    <option value="normal">Normal</option>
+                    <option value="adm">Administrador</option>
                 </select>
                 <div class="mt-4 d-flex justify-content-center">
                     <button routerLink='/entrar' type="submit" class="btn btn-danger text-light mr-4" style="border-color: white;">
                         CANCELAR
                     </button>
-                    <button type="submit" class="btn text-light" style="border-color: white;">
+                    <button type="submit" class="btn text-light" style="border-color: white;" (click)='cadastrar()' >
                         CADASTRAR
                     </button>
                 </div>
