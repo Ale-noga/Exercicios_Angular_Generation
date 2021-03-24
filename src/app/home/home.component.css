@@ -20,14 +20,11 @@
     border-radius: 15%;
 }
 
-#homeb{
+.bg-nav{
+    background-color: #02202D;
+
+}
+
+#logo{
     text-decoration: none;
-    color: white;
 }
-
-#img-car{
-
-    height: 100%;
-    width: 100%;
-}
-
