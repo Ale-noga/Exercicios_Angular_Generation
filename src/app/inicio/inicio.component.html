@@ -20,7 +20,6 @@
             <div class="row border mt-3 mb-2 ">
                 <div class="col-md-12 p-3">
                     <a id="botao" href="" data-toggle="modal" data-target="#novoTema">
-                    <a id="botao" href="">
                         <p class="font text-center">Temas
                             <i class="fa fa-star-o" aria-hidden="true"></i>
                         </p>
@@ -50,11 +49,43 @@
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
+               
+                <!--POSTAGEM-->
                 <div class="tab-pane fade show active" id="nav-postagens" role="tabpanel"
                     aria-labelledby="nav-postagens-tab">...</div>
+
+                <!--POST POR TEMA-->
                 <div class="tab-pane fade" id="nav-postTema" role="tabpanel" aria-labelledby="nav-postTema-tab">...
                 </div>
-                <div class="tab-pane fade" id="nav-Temas" role="tabpanel" aria-labelledby="nav-Temas-tab">...</div>
+                
+                <!--TEMAS-->
+                <div class="tab-pane fade" id="nav-Temas" role="tabpanel" aria-labelledby="nav-Temas-tab">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Alterações</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor='let tema of listTema'>
+                            <th>{{tema.id}}</th>
+                            <td>{{tema.descricao}}</td>
+                            <td class="d-flex justify-content-around">
+                                <button class="btn btn-info">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                                <button class="btn btn-danger">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                </div>
             </div>
         </div>
     </div>
@@ -102,7 +133,7 @@
 
 
 <!-- Modal Novo Tema-->
-<div class="modal fade" id="novoPost" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+<div class="modal fade" id="novoTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -117,7 +148,7 @@
                 <div class="form-group">
 
                     <label for="descricao">Descrição</label>
-                    <textarea name="descricao" rows="4" class="form-control" id="descricao"
+                    <textarea [(ngModel)]='tema.descricao' name="descricao" rows="4" class="form-control" id="descricao"
                         placeholder="Qual é o tema?"></textarea>
 
                 </div>
@@ -125,7 +156,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Publicar</button>
+                <button type="button" class="btn btn-primary" (click)="cadastrarTema()">Publicar</button>
             </div>
         </div>
     </div>
