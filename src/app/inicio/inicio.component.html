@@ -1,1 +1,100 @@
-<p>inicio works!</p>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row border mt-5 mb-2 ">
+                <div class="col-md-12 p-3">
+                    <a id="botao" href="" data-toggle="modal" data-target="#novoPost">
+                        <p class="font text-center">Postar <i class="fa fa-plus-circle" aria-hidden="true"></i></p>
+                    </a>
+                </div>
+            </div>
+            <div class="row border mt-3 mb-2 ">
+                <div class="col-md-12 p-3">
+                    <a id="botao" href="">
+                        <p class="font text-center">Editar
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="row border mt-3 mb-2 ">
+                <div class="col-md-12 p-3">
+                    <a id="botao" href="">
+                        <p class="font text-center">Temas
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="row border mt-3 mb-5 ">
+                <div class="col-md-12 p-3">
+                    <a id="botao" href="">
+                        <p class="font text-center">Perfil
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 nav-border mt-5">
+            <nav>
+                <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active font fs-20 " id="nav-postagens" data-toggle="tab"
+                        href="#nav-postagens" role="tab" aria-controls="nav-postagens" aria-selected="true">Posts</a>
+                    <a class="nav-item nav-link font fs-20 " id="nav-postTema-tab" data-toggle="tab"
+                        href="#nav-postTema" role="tab" aria-controls="nav-postTema" aria-selected="false">Post por
+                        Tema</a>
+                    <a class="nav-item nav-link font fs-20 " id="nav-Temas-tab" data-toggle="tab" href="#nav-Temas"
+                        role="tab" aria-controls="nav-Temas" aria-selected="false">Temas</a>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-postagens" role="tabpanel"
+                    aria-labelledby="nav-postagens-tab">...</div>
+                <div class="tab-pane fade" id="nav-postTema" role="tabpanel" aria-labelledby="nav-postTema-tab">...
+                </div>
+                <div class="tab-pane fade" id="nav-Temas" role="tabpanel" aria-labelledby="nav-Temas-tab">...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="novoPost" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="TituloModalCentralizado">Novo Post</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+
+                    <label for="titulo">Título</label>
+                    <input type="text" class="form-control" id="titulo" placeholder="Insira o título">
+
+                    <label for="tema">Escolha o tema ou <a href="">cadastre um novo:</a></label>
+                    <select name="tema" id="tema" class="form-control">
+                        <option value="">Temas</option>
+                    </select>
+
+
+                    <label for="descricao">Descrição</label>
+                    <textarea name="descricao" rows="4" class="form-control" id="descricao"
+                        placeholder="No que está pensando?"></textarea>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Publicar</button>
+            </div>
+        </div>
+    </div>
+</div>
