@@ -13,8 +13,8 @@ const routes: Routes = [
   {path:'entrar',component:EntrarComponent},
   {path:'cadastrar',component:CadastrarComponent},
   {path: 'home', component:HomeComponent},
-  {path: 'inicio', component:InicioComponent}
-  
+  {path: 'inicio', component:InicioComponent},
+  {path: 'inicio/:id', component:InicioComponent}  
 
 ];
 
