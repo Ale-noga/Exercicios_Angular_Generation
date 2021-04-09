@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/postagem';
 import { Tema } from '../model/tema';
 import { Usuario } from '../model/usuario';
+import { AlertaService } from '../service/alerta.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -33,6 +34,7 @@ export class InicioComponent implements OnInit {
     private postagemService: PostagemService,
     private route: ActivatedRoute,
     private auth: AuthService,
+    private alert: AlertaService
   ) { }
 
   ngOnInit() {
@@ -166,7 +168,7 @@ export class InicioComponent implements OnInit {
       this.auth.cadastrar(this.user).subscribe((resp: Usuario)=>{
         this.user = resp
         this.router.navigate(['/inicio'])
-        alert('Usuario atualizado com sucesso! Faça login novamente')
+        this.alert.showAlertSuccess('Usuario atualizado com sucesso! Faça login novamente')
         environment.token=''
         environment.id=0
         environment.foto=''

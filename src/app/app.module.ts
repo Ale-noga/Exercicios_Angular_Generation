@@ -12,6 +12,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { HomeComponent } from './home/home.component';
 import { from } from 'rxjs';
 import { InicioComponent } from './inicio/inicio.component';
+import { AlertaComponent } from './alerta/alerta.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { InicioComponent } from './inicio/inicio.component';
     EntrarComponent,
     CadastrarComponent,
     HomeComponent,
-    InicioComponent
+    InicioComponent,
+    AlertaComponent
   ],
   imports: [
     BrowserModule,
